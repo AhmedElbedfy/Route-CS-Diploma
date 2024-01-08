@@ -76,6 +76,31 @@ int main() {
 
     cout << endl << "----- Question Number 6" << endl;
 
+    int q6_number;
+
+    cout << "Enter the size of the array: ";
+    cin >> q6_number;
+
+    int q6_arr[q6_number];
+
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < q6_number; i++) {
+        cin >> q6_arr[i];
+    }
+
+    int q6_evenCount = 0, q6_oddCount = 0;
+
+    for (int i = 0; i < q6_number; i++) {
+        if (q6_arr[i] % 2 == 0) {
+            q6_evenCount++;
+        } else {
+            q6_oddCount++;
+        }
+    }
+
+  cout << "Total even elements: " << q6_evenCount << endl;
+  cout << "Total odd elements: " << q6_oddCount << endl;
+
 
     // 7th assignment
     //
