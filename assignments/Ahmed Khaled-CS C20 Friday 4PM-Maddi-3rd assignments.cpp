@@ -69,37 +69,47 @@ int main() {
 
     cout << endl << "----- Question Number 5" << endl;
 
+    int q5_number;
+
+    cout << "Enter the size of the array: ";
+    cin >> q5_number;
+
+    int q6_arr[q5_number];
+
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < q5_number; i++) {
+        cin >> q5_arr[i];
+    }
+
+    int q5_evenCount = 0, q5_oddCount = 0;
+
+    for (int i = 0; i < q5_number; i++) {
+        if (q5_arr[i] % 2 == 0) {
+            q5_evenCount++;
+        } else {
+            q5_oddCount++;
+        }
+    }
+
+  cout << "Total even elements: " << q5_evenCount << endl;
+  cout << "Total odd elements: " << q5_oddCount << endl;
 
 
     // 6th assignment
     //
 
-    cout << endl << "----- Question Number 6" << endl;
+    cout << endl << "----- Question Number 6" << endl;\
 
-    int q6_number;
+    int q6_arr[] = {10, 12, 20, 25, 13, 10, 9, 40, 60, 5};
+    int q6_input;
 
-    cout << "Enter the size of the array: ";
-    cin >> q6_number;
-
-    int q6_arr[q6_number];
-
-    cout << "Enter the elements of the array: ";
-    for (int i = 0; i < q6_number; i++) {
-        cin >> q6_arr[i];
-    }
-
-    int q6_evenCount = 0, q6_oddCount = 0;
-
-    for (int i = 0; i < q6_number; i++) {
-        if (q6_arr[i] % 2 == 0) {
-            q6_evenCount++;
-        } else {
-            q6_oddCount++;
+    cout << "what number you search for: ";
+    cin >> q6_input;
+    for (int i = 0; i < 10; i++) {
+        if ( q6_arr[i] == q6_input) {
+            cout << "Element found at index " << i << endl;
         }
     }
-
-  cout << "Total even elements: " << q6_evenCount << endl;
-  cout << "Total odd elements: " << q6_oddCount << endl;
 
 
     // 7th assignment
@@ -107,51 +117,48 @@ int main() {
 
     cout << endl << "----- Question Number 7" << endl;
 
+    int q7_arr[] = {5, 7, 8, 8, 5, 8, 7, 7};
+    int q7_input;
+    int q7_counter = 0;
+
+    cout << "what number you search for: ";
+    cin >> q7_input;
+    for (int i = 0; i < 10; i++) {
+        if ( q7_arr[i] == q7_input) {
+            q7_counter++;
+        }
+    }
+    cout << "Number of occurrences of " << q7_input <<" : " << q7_counter << endl;
 
     // 8th assignment
     //
 
     cout << endl << "----- Question Number 8" << endl;
 
+    int q8_arr_len;
 
-    // 9th assignment
-    //
+    cout << "what is the length of the Array: ";
 
-    cout << endl << "----- Question Number 9" << endl;
+    cin >> q8_arr_len;
 
+    int q8_arr[q8_arr_len];
+    int q8_2nd_arr[q8_arr_len];
 
+    for (int i = 0; i < q8_arr_len; i++) {
+        cin >> q8_arr[i];
+        q8_2nd_arr[i] = q8_arr[i];
+    }
 
-    // 10th assignment
-    //
-
-    cout << endl << "----- Question Number 10" << endl;
-
-
-    // 11th assignment
-    //
-
-    cout << endl << "----- Question Number 11" << endl;
-
-
-
-    // 12th assignment
-    //
-
-    cout << endl << "----- Question Number 12" << endl;
-
-
-
-    // 13th assignment
-    //
-
-    cout << endl << "----- Question Number 13" << endl;
-
-
-
-    //14th assignment
-    //
-
-    cout << endl << "----- Question Number 14" << endl;
+    cout << "Array1: ";
+    for (int i = 0; i < q8_arr_len; i++) {
+        cout << q8_arr[i] << " ";
+    }
+    cout << endl;
+    cout << "Array2: ";
+    for (int i = 0; i < q8_arr_len; i++) {
+        cout << q8_2nd_arr[i] << " ";
+    }
+    cout << endl;
 
 
     return 0;
