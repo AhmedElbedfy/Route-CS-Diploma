@@ -25,7 +25,7 @@ int main()
 	// What are the differences between If Condition and Switch, with example ? mention three differences. (15 Points)
 	/*
 		(A) if condition: if one condition in the chain become true you computer won't look to the other statement in the chain,
-			switch cases: the computer will continue excute the other cases and that's why we put break;
+			switch cases: the computer will continue evalute the other cases and that's why we put break;
 
 		(B) in the if I can have multiple cases to compare between as condition,
 		and the cases don't have to be related but it in cases all cases depend on the same condition statement
@@ -41,7 +41,7 @@ int main()
 	if (num == 1) cout << "one";
 	else if (num == 2) cout << "two";
 	else if (num == 3) cout << "there";
-	else "number is greater than 3."; 
+	else "number is greater than 3.";
 
 	cout << " - ";
 
@@ -98,7 +98,7 @@ int main()
 	int arr[4] = { 1, 2, 3, 4 };
 
 	cout << getAverage(arr, 4) << endl;
-	
+
 	// 5th Question of the Exam
 	// Create a function take two integers to swap them, then call it in main function. (20 Points)
 	cout << endl << "- 5th Question" << endl;
@@ -113,7 +113,7 @@ int main()
 	// 6th Question of the Exam
 	// Create a function take two integers to swap them, then call it in main function. (20 Points)
 	cout << endl << "- 6th Question" << endl;
-	
+
 	int looping = 5;
 	for (int i = 0; i <= looping; i++) {
 		for (int j = looping; j >= 0; j--) {
@@ -128,10 +128,10 @@ int main()
 	// Without coping the following code on compiler, Draw the below code : (15 Points)
 	/***
 	|
-	|*    
-	|**   
-	|* *  
-	|*  * 
+	|*
+	|**
+	|* *
+	|*  *
 	|*****
 	|
 	***/
