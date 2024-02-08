@@ -91,6 +91,133 @@ public:
 	}
 };
 
+class Account {
+private:
+	string id;
+	string name;
+	int balance;
+public:
+	Account(string i, string n) {
+		id = i;
+		name = n;
+	}
+	Account(string i, string n, int balance) {
+		id = i;
+		name = n;
+		balance = balance;
+	}
+
+	string getId() {
+		return id;
+	}
+
+	string getName() {
+		return name;
+	}
+
+	int getBalance() {
+		return balance;
+	}
+
+	int credit(int amount) {
+		balance += amount;
+		return balance;
+	}
+
+	int debit(int amount) {
+		if (amount <= balance) {
+			balance -= amount;
+		}
+		else {
+			cout << "Amount exceeded balance";
+			return balance;
+		}
+	}
+
+	int transferTo(Account another, int amount) {
+		if (amount <= balance) {
+			another.credit(amount);
+		}
+		else {
+			cout << "Amount exceeded balance";
+			return balance;
+		}
+	}
+};
+
+
+class Time {
+
+private:
+	int hour;
+	int minute;
+	int secound;
+
+public:
+	Time(int h, int m, int s) {
+		if (h > 0 && h < 24) {
+			hour = h;
+		}
+
+		if (m > 0 && m < 60) {
+			minute = m;
+		}
+
+		if (s > 0 && s < 60) {
+			secound = s;
+		}
+	}
+
+	int getHour() {
+		return hour;
+	}
+
+	int getMinute() {
+		return minute;
+	}
+
+	int getSecound() {
+		return secound;
+	}
+
+	void setHour(int h) {
+		if (h > 0 && h < 24) {
+			hour = h;
+		}
+	}
+
+	void setMinute(int m) {
+		if (m > 0 && m < 60) {
+			minute = m;
+		}
+	}
+
+	void setSecound(int s) {
+		if (s > 0 && s < 60) {
+			secound = s;
+		}
+	}
+
+	void setTime(int h, int m, int s) {
+		hour = h;
+		minute = m;
+		secound = s;
+	}
+
+	Time nextSecound() {
+		int newSecound = secound++;
+		Time nextSecoundObj(hour, minute, newSecound);
+
+		return nextSecoundObj;
+	}
+
+	Time previousSecond() {
+		int prevSecound = secound++;
+		Time prevSecoundObj(hour, minute, prevSecound);
+
+		return prevSecoundObj;
+	}
+};
 
 
 int main()
@@ -120,7 +247,6 @@ int main()
 
 	cout << emp1.getSalary() << endl;
 
-	
 
 
 

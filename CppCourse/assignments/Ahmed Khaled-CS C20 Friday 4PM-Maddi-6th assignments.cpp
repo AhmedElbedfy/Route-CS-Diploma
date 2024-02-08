@@ -1,244 +1,255 @@
 #include <iostream>
+#include <string>
+
+
 using namespace std;
 
-/* ---------------- 2D Array Functions ---------------- */
+class Circle {
+private:
+	double radius;
+	string color;
 
-// Calculates and prints the sum of diagonal elements in a 3x3 array
-void Q_Num_12() {
-	cout << endl << "----- Question Number 12" << endl;
-
-	// create 2d array
-	int arr[3][3] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	int counter = 0;
-
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
-			if (i == j) {
-				counter += arr[i][j];
-			}
-		}
+public:
+	Circle() {
+		radius = 1;
+		color = "red";
+	}
+	Circle(double r) {
+		radius = r;
+	}
+	Circle(double r, string c) {
+		radius = r;
+		color = c;
 	}
 
-	cout << counter << endl;
-}
-
-// Adds corresponding elements of two 3x3 arrays and prints the result
-void Q_Num_13() {
-	cout << endl << "----- Question Number 13" << endl;
-
-	// Input elements for the first array
-	int firstArray[3][3];
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
-			cin >> firstArray[i][j];
-		}
+	double getRadius() {
+		return radius;
+	}
+	string getColor() {
+		return color;
 	}
 
-	// Input elements for the 2nd array
-	int secoundArray[3][3];
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
-			cin >> secoundArray[i][j];
-		}
+	void setRadius(double r) {
+		radius = r;
 	}
 
-	// Calculates and prints the sum of each row in a 3x3 array
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
-			cout << firstArray[i][j] + secoundArray[i][j] << " ";
-		}
-		cout << endl;
-	}
-}
-
-
-// Calculates and prints the sum of each row in a 3x3 array
-void Q_Num_14() {
-	cout << endl << "----- Question Number 14" << endl;
-
-	int arr[3][3];
-
-	// Input elements for the array
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
-			cin >> arr[i][j];
-		}
+	void setColor(string c) {
+		color = c;
 	}
 
-	// Calculate and print row sums
-	for (int i = 0; i < 3; i++) {
-		int counter = 0;
-		for (int j = 0; j < 3; j++) {
-			counter += arr[i][j];
-		}
-		cout << "Sum of row " << i + 1 << " = " << counter << endl;
+	double getArea() {
+		double pi = 3.14159265358979323846;
+		return pi * pow(radius, 2);
+	}
+};
+
+class Employee {
+private:
+	int id;
+	string firstName;
+	string lastName;
+	int salary;
+public:
+	Employee(int i, string fName, string lName, int s) {
+		id = i;
+		firstName = fName;
+		lastName = lName;
+		salary = s;
 	}
 
-}
-
-
-/* ---------------- Function Assignments ---------------- */
-
-// Prints a given number
-void Q_Num_1_Functions(int number) {
-	cout << endl << "----- Question Number 1 in Functions" << endl;
-	cout << number;
-}
-
-// Calculates and returns the average of three numbers
-float Q_Num_2_Functions(int i, int j, int k) {
-	cout << endl << "----- Question Number 2 in Functions" << endl;
-	return ((i + j + k) / 3.0);
-}
-
-// Finds the maximum and minimum of two numbers
-int maxNumber(int a, int b) {
-	if (a > b) {
-		return a;
+	int getId() {
+		return id;
 	}
-	else {
-		return b;
+
+	string getFirstName() {
+		return firstName;
 	}
-}
 
-int minNumber(int a, int b) {
-	if (b > a) {
-		return a;
+	string getLastName() {
+		return lastName;
 	}
-	else {
-		return b;
+
+	string getName() {
+		return firstName + " " + lastName;
 	}
-}
 
-// Finds the maximum and minimum of two input numbers
-void Q_Num_3_Functions() {
-	cout << endl << "----- Question Number 3 in Functions" << endl;
-
-	int n1, n2;
-	cin >> n1;
-	cin >> n2;
-
-
-	cout << "Max number is: " << maxNumber(n1, n2) << endl;
-	cout << "Min number is: " << minNumber(n1, n2) << endl;
-}
-
-// Determines whether a given number is even or odd.
-void Q_Num_4_Functions() {
-	cout << endl << "----- Question Number 4 in Functions" << endl;
-
-	int num;
-	cin >> num;
-
-	if (num % 2 == 0) {
-		cout << "Number " << num << " is even." << endl;
+	int getSalary() {
+		return salary;
 	}
-	else {
-		cout << "Number " << num << " is odd." << endl;
+
+	void setSalary(int s) {
+		salary = s;
 	}
-}
 
-// Checks if a given number is prime.
-bool Q_Num_5_Functions() {
-	cout << endl << "----- Question Number 5 in Functions" << endl;
-
-	int number;
-	cin >> number;
-
-	if (number == 1) {
-		return false;
+	int getAnnualSalary() {
+		return salary * 12;
 	}
-	else {
-		int counter = 0;
-		for (int i = 1; i <= number; i++) {
-			if (number % i == 0) {
-				counter++;
-			}
-		}
-		if (counter == 2) {
-			return true;
+
+	int raiseSalary(int precent) {
+		salary += salary * (precent / 100.0);
+		return salary;
+	}
+};
+
+class Account {
+private:
+	string id;
+	string name;
+	int balance;
+public:
+	Account(string i, string n) {
+		id = i;
+		name = n;
+	}
+	Account(string i, string n, int balance) {
+		id = i;
+		name = n;
+		balance = balance;
+	}
+
+	string getId() {
+		return id;
+	}
+
+	string getName() {
+		return name;
+	}
+
+	int getBalance() {
+		return balance;
+	}
+
+	int credit(int amount) {
+		balance += amount;
+		return balance;
+	}
+
+	int debit(int amount) {
+		if (amount <= balance) {
+			balance -= amount;
 		}
 		else {
-			return false;
+			cout << "Amount exceeded balance";
+			return balance;
 		}
 	}
 
-
-}
-
-// Calculates and prints the cube of a given number.
-void Q_Num_6_Functions(int num) {
-	cout << endl << "----- Question Number 6 in Functions" << endl;
-	cout << "the cube of number: " << num << " is " << (num * num * num) << endl;
-}
-
-// Calculates and prints the diameter, circumference, and area of a circle.
-void Q_Num_7_Functions(float radius) {
-	cout << endl << "----- Question Number 7 in Functions" << endl;
-	float diameter = radius * 2;
-	float circumference = 2 * 3.14159 * radius;
-	float area = 3.14159 * radius * radius;
-
-	cout << "Diameter = " << diameter << " units" << endl;
-	cout << "Circumference = " << circumference << " units" << endl;
-	cout << "Area = " << area << " sq. units" << endl;
-
-}
-
-// Prints all factors of a given number.
-void Q_Num_8_Functions(int num) {
-	cout << endl << "----- Question Number 8 in Functions" << endl;
-
-	for (int i = 1; i <= num; i++) {
-		if (num % i == 0) {
-			cout << i << endl;
+	int transferTo(Account another, int amount) {
+		if (amount <= balance) {
+			another.credit(amount);
+		}
+		else {
+			cout << "Amount exceeded balance";
+			return balance;
 		}
 	}
-}
+};
+
+
+class Time {
+
+private:
+	int hour;
+	int minute;
+	int secound;
+
+public:
+	Time(int h, int m, int s) {
+		if (h > 0 && h < 24) {
+			hour = h;
+		}
+
+		if (m > 0 && m < 60) {
+			minute = m;
+		}
+
+		if (s > 0 && s < 60) {
+			secound = s;
+		}
+	}
+
+	int getHour() {
+		return hour;
+	}
+
+	int getMinute() {
+		return minute;
+	}
+
+	int getSecound() {
+		return secound;
+	}
+
+	void setHour(int h) {
+		if (h > 0 && h < 24) {
+			hour = h;
+		}
+	}
+
+	void setMinute(int m) {
+		if (m > 0 && m < 60) {
+			minute = m;
+		}
+	}
+
+	void setSecound(int s) {
+		if (s > 0 && s < 60) {
+			secound = s;
+		}
+	}
+
+	void setTime(int h, int m, int s) {
+		hour = h;
+		minute = m;
+		secound = s;
+	}
+
+	Time nextSecound() {
+		int newSecound = secound++;
+		Time nextSecoundObj(hour, minute, newSecound);
+
+		return nextSecoundObj;
+	}
+
+	Time previousSecond() {
+		int prevSecound = secound++;
+		Time prevSecoundObj(hour, minute, prevSecound);
+
+		return prevSecoundObj;
+	}
+};
 
 
 int main()
 {
-	/* ---------------- 2D Array Functions ---------------- */
+	// first Class Circle
+	Circle c1;
+	cout << c1.getRadius() << endl;
+	cout << c1.getColor() << endl;
+	cout << c1.getArea() << endl;
+	Circle c2(15, "black");
+	cout << c2.getRadius() << endl;
+	cout << c2.getColor() << endl;
+	cout << c2.getArea() << endl;
 
-	// Calculates and prints the sum of diagonal elements in a 3x3 array
-	Q_Num_12();
+	// Secound Class Circle
+	Employee emp1(1, "Ahmed", "Khaled", 1000);
+	cout << emp1.getId() << endl;
+	cout << emp1.getFirstName() << endl;
+	cout << emp1.getLastName() << endl;
+	cout << emp1.getName() << endl;
+	cout << emp1.getSalary() << endl;
+	cout << emp1.getAnnualSalary() << endl;
 
-	// Adds corresponding elements of two 3x3 arrays and prints the result
-	Q_Num_13();
+	cout << emp1.raiseSalary(10) << endl;
 
-	// Calculates and prints the sum of each row in a 3x3 array
-	Q_Num_14();
+	emp1.setSalary(1200);
+
+	cout << emp1.getSalary() << endl;
 
 
-	/* ---------------- Function Assignments ---------------- */
 
-	// Prints a given number	
-	Q_Num_1_Functions(5);
-	
-	// Calculates and returns the average of three numbers
-	cout << Q_Num_2_Functions(1, 2, 3);
 
-	// Finds the maximum and minimum of two input numbers
-	Q_Num_3_Functions();
-
-	// Determines whether a given number is even or odd.
-	Q_Num_4_Functions();
-
-	// Checks if a given number is prime.
-	cout << Q_Num_5_Functions();
-
-	// Calculates and prints the cube of a given number.
-	Q_Num_6_Functions(5);
-
-	// Calculates and prints the diameter, circumference, and area of a circle.
-	Q_Num_7_Functions(10);
-
-	// Prints all factors of a given number.
-	Q_Num_8_Functions(25);
 
 	return 0;
 }
-
-
-
