@@ -86,7 +86,7 @@ public:
 	}
 
 	int raiseSalary(int precent) {
-		salary += salary * (precent / 100.0);
+		salary = salary + (salary * (precent / 100.0));
 		return salary;
 	}
 };
@@ -100,11 +100,12 @@ public:
 	Account(string i, string n) {
 		id = i;
 		name = n;
+		balance = 0;
 	}
-	Account(string i, string n, int balance) {
+	Account(string i, string n, int b) {
 		id = i;
 		name = n;
-		balance = balance;
+		balance = b;
 	}
 
 	string getId() {
@@ -126,7 +127,8 @@ public:
 
 	int debit(int amount) {
 		if (amount <= balance) {
-			balance -= amount;
+			balance = balance - amount;
+			return balance;
 		}
 		else {
 			cout << "Amount exceeded balance";
@@ -137,6 +139,7 @@ public:
 	int transferTo(Account another, int amount) {
 		if (amount <= balance) {
 			another.credit(amount);
+			return balance;
 		}
 		else {
 			cout << "Amount exceeded balance";
@@ -212,7 +215,7 @@ public:
 	}
 
 	Time previousSecond() {
-		int prevSecound = secound++;
+		int prevSecound = secound--;
 		Time prevSecoundObj(hour, minute, prevSecound);
 
 		return prevSecoundObj;
@@ -222,7 +225,7 @@ public:
 
 int main()
 {
-	// first Class Circle
+	//first Class Circle
 	Circle c1;
 	cout << c1.getRadius() << endl;
 	cout << c1.getColor() << endl;
@@ -232,7 +235,7 @@ int main()
 	cout << c2.getColor() << endl;
 	cout << c2.getArea() << endl;
 
-	// Secound Class Circle
+	//Secound Class Circle
 	Employee emp1(1, "Ahmed", "Khaled", 1000);
 	cout << emp1.getId() << endl;
 	cout << emp1.getFirstName() << endl;
@@ -247,9 +250,52 @@ int main()
 
 	cout << emp1.getSalary() << endl;
 
+	//third class Account 
+	Account acc1("1", "Ahmed", 100);
+	Account acc2("2", "Khaled", 200);
 
 
+	cout << acc1.getId() << endl;
+	cout << acc1.getName() << endl;
+	cout << acc1.getBalance() << endl;
 
+	cout << acc1.credit(100) << endl;
+	cout << acc1.debit(100) << endl;
+
+	cout << acc1.transferTo(acc2, 100) << endl;
+
+	//fourth class Time
+	Time t1(10, 30, 30);
+
+	cout << t1.getHour() << " : ";
+	cout << t1.getMinute() << " : ";
+	cout << t1.getSecound() << endl;
+
+	t1.setHour(12);
+	t1.setMinute(15);
+	t1.setSecound(15);
+
+	cout << t1.getHour() << " : ";
+	cout << t1.getMinute() << " : ";
+	cout << t1.getSecound() << endl;
+
+	t1.setTime(10, 30, 30);
+
+	cout << t1.getHour() << " : ";
+	cout << t1.getMinute() << " : ";
+	cout << t1.getSecound() << endl;
+
+	t1.nextSecound();
+
+	cout << t1.getHour() << " : ";
+	cout << t1.getMinute() << " : ";
+	cout << t1.getSecound() << endl;
+
+	t1.previousSecond();
+
+	cout << t1.getHour() << " : ";
+	cout << t1.getMinute() << " : ";
+	cout << t1.getSecound() << endl;
 
 	return 0;
 }
