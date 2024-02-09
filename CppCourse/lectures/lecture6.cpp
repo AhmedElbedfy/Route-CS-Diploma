@@ -7,17 +7,17 @@ using namespace std;
 	Lecture Number: 6
 
 	About:
-	( OOP )
+	( OOP 1st lect )
 
 	Notes:
 	1-	Access operator "dot" => "." - JS have also "Brackets notion" => "[]"
-	2-	Access modifier (Public - Private - hide )
+	2-	Access modifier (Public - Private - protected )
 	3-	Getters and Setters for Private attributes
 	4-	differnet between encapsulation and data hiding and protoction.
 	5-	constructor have no return type
 	6-	constructor without parameter called default constructor
 	7-	parametrized constructor
-	8-	constructor can be overloaded (parameters number, data type of the parameters, parmaeter order)
+	8-	constructor can be overloaded (parameters number, data type of parameters, parameters types order)
 	9-	the constructor take the same name as the class
 	10- UML Diagram
 
