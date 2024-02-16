@@ -136,9 +136,10 @@ public:
 		}
 	}
 
-	int transferTo(Account another, int amount) {
+	int transferTo(Account &another, int amount) {
 		if (amount <= balance) {
 			another.credit(amount);
+			balance -= amount;
 			return balance;
 		}
 		else {

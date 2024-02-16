@@ -19,6 +19,7 @@ using namespace std;
 		a- Diamond problem when one child have 2 parent thats have the same (methods, or attributes
 	7- Multi levels inhertance (gandfather, parent, child)
 	8- search about association (has a relationship - mondentory, composiation and etc)
+		has a realtionship
 
 	OOP Consepts:
 	* Inhertance:
