@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cpp-vs.cpp">
+    <ClCompile Include="RouteCPPCourse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
