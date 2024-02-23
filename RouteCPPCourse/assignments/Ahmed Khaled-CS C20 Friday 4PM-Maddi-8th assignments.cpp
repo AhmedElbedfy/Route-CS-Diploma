@@ -89,8 +89,8 @@ public:
 		else {
 			secound++;
 		}
-		
-		
+
+
 
 		return *this;
 	}
@@ -225,7 +225,7 @@ public:
 		return p;
 	}
 
-	
+
 
 	string getLength() {
 		return "Idon't know how to Calcuate it!";
@@ -321,7 +321,7 @@ public:
 
 		Point::setXY(p[0], p[1]);
 
-		delete []p;
+		delete[]p;
 
 		return *this;
 	}
@@ -363,11 +363,11 @@ int main()
 	//2nd Task 
 	cout << "------ 2nd Class Solution: \n" << endl;
 
-	
+
 	MyLine line1(1, 2, 3, 4);
 
 	int *l1Begin = line1.getBeginXY();
-	
+
 	cout << "Address: " << l1Begin << endl;
 
 	cout << "Line Begin X: " << l1Begin[0] << endl;
@@ -382,8 +382,8 @@ int main()
 
 	cout << "Line End Y: " << l1End[1] << endl;
 
-	delete []l1Begin;
-	delete []l1End;
+	delete[]l1Begin;
+	delete[]l1End;
 
 	cout << endl;
 	// 3rd Task
