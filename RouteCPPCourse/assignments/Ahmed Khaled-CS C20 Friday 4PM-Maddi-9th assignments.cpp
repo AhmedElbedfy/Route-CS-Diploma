@@ -85,7 +85,7 @@ int main()
 
 	// Task 2 
 	Calculator<double> cal(2, 1);
-	
+
 	cout << "Addition: " << cal.add() << endl;
 	cout << "Subtraction: " << cal.subtract() << endl;
 	cout << "Multiplication: " << cal.multiply() << endl;
@@ -95,7 +95,7 @@ int main()
 	catch (int errorCode) {
 		MyException(errorCode).PrintExceptionMessage(); // task 5
 	}
-	
+
 	Calculator<double> cal2(2, 0);
 	// Task 4
 	try {
@@ -113,7 +113,7 @@ int main()
 	catch (int errorCode) {
 		MyException(errorCode).PrintExceptionMessage(); // task 5
 	}
-	
+
 
 	return 0;
 }
