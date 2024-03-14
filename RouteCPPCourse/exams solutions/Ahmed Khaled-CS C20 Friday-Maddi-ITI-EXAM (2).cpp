@@ -10,10 +10,10 @@ using namespace std;
 
 	[A] Encapsulation:
 			It is the bundling of data with the methods that operate on that data, or the restricting of direct access to some of an object's components.
-	[B] Polymorphism: 
+	[B] Polymorphism:
 			It is the ability of a function to perform different operations or actions based on the objects that it acts upon.
 	[C] Abstraction:
-			It is the concept of hiding the complex implementation details and showing only the necessary features of an object. 
+			It is the concept of hiding the complex implementation details and showing only the necessary features of an object.
 	[D] Inheritance:
 			It is the mechanism by which one class is allowed to inherit the features(fields and methods) of another class.
 
@@ -21,15 +21,15 @@ using namespace std;
 	[A] Private:
 		The data under the Private modifiers can't be acess any where in the application but the class itself.
 	[B] Public:
-		The data under the Public modifiers can be acess any where in the application. 
+		The data under the Public modifiers can be acess any where in the application.
 	[C] Proteted:
 		The data under the Protected modifiers the same as the private but with the abblity to acess it in child classies too.
 
 	3- Write an example for Exception handling.
-		line --> 
+		line --> 127
 
 	4- Write an example for Template.
-		line -->
+		line --> 149
 
 	5- What is the difference between overloading and overriding?
 		Overridiing: Is to rewrite a function or variable with same name of already exit function or variable
@@ -39,7 +39,7 @@ using namespace std;
 			[C] The number of the parameters
 
 	6- Solve the below problem:
-		line -->
+		line --> 155
 
 */
 
@@ -102,7 +102,7 @@ public:
 	Point3D() {
 		z = 0;
 	}
-	Point3D(float x, float y,float z) : Point2D(x,y), z(z) {}
+	Point3D(float x, float y, float z) : Point2D(x, y), z(z) {}
 	float getZ() {
 		return z;
 	}
@@ -135,8 +135,8 @@ int main()
 		if (b == 0) {
 			throw 1;
 		}
-		
-		cout << a << " / " << b <<": " << (a / b) << endl;
+
+		cout << a << " / " << b << ": " << (a / b) << endl;
 	}
 	catch (int errorCode) {
 		if (errorCode == 1) {
@@ -164,8 +164,8 @@ int main()
 
 	float* xyz = p2.getXYZ();
 
-	cout << "Point-2 X: " << xyz[0] << " Point-2 Y: " << xyz[1]  << " Point-2 Z: " << xyz[2] << endl;
-	
+	cout << "Point-2 X: " << xyz[0] << " Point-2 Y: " << xyz[1] << " Point-2 Z: " << xyz[2] << endl;
+
 
 
 	return 0;
